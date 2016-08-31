@@ -1,2 +1,16 @@
 # Google App Engine generated folder
 appengine-generated/
+
+
+config.py
+*.py[cod]
+
+
+config.json
+*node_modules/
+
+
+
+#Sublime Text
+*.sublime-project
+*.sublime-workspace

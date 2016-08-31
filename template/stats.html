@@ -1,0 +1,53 @@
+
+{% extends "site_template.html" %}
+
+
+
+
+{% block body_content %}
+
+<div class="container">
+    <div>
+        <div id="chart_div" style="height: 500px;"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+{% block body_footerscript_content %}
+
+
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Time', 'Ether funded'],
+            {% for rec in result %}
+                [new Date({{rec.time}}),  {{rec.ether}}]{% if not forloop.last %},{% endif %}
+            {% endfor %}
+        ]);
+
+        var options = {
+            title: 'Total Ether funded in last 24 hours (Local timezone)',
+            chartArea: {width: '80%'},
+            hAxis: {
+                format: 'dd MMM HH:mm'
+            },
+            legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+    }
+
+</script>
+
+
+
+{% endblock %}
+

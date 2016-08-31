@@ -1,0 +1,4 @@
+cron:
+- description: Get Update from NodeJS server
+  url: /cron/getUpdate
+  schedule: every 10 minutes synchronized
