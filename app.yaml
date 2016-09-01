@@ -26,8 +26,8 @@ handlers:
   script: cron.app
   login: admin
 
-- url: /api/v1/.*
-  script: api_v1.app
+- url: /api/.*
+  script: api.app
 
 - url: .*
   script: main.app

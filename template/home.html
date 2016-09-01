@@ -109,10 +109,6 @@
     </table>
 </div>
                     <div class="info_tips">Token price is dynamically updated based on a number of tokens issued. Early birds can get tokens at a relatively low price.</div>
-<!--
-                    <div class="info_title">Tokens Available in the current tier</div>
-                    <div class="info_value">{{ tokens_current_tier }} Ħ</div>
--->
 
                 </div></div>
             </div>
@@ -127,6 +123,23 @@
                     <div class="video-container">
 <iframe width="640" height="360" src="https://www.youtube.com/embed/dr1dwKkSu7k?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                     </div>
+                </div></div>
+            </div>
+
+            <div class="section">
+                <div class="section_item"><div class="section_item_inner">
+
+                    <div class="section_title">Check my Ħ token balance</div>
+
+                    <div class="input-field">
+                        <input id="ethereum_address_input" type="text" class="validate">
+                        <label for="ethereum_address_input">Ethereum Address</label>
+                    </div>
+
+                    <a class="waves-effect waves-light btn orange accent-3 check_token_balance" >Chcek my balance</a>
+
+                    <div class="address_balance_result"></div>
+
                 </div></div>
             </div>
 
@@ -149,6 +162,42 @@
 
 <script type="text/javascript">
 
+var check_token_balance = function(){
+
+    var _address = $("#ethereum_address_input").val();
+
+    if(_address == ""){
+        $(".address_balance_result").html("<div class='invalid'>Please enter an address</div>");
+        return;
+    }
+
+    if(_address.length != 42){
+        $(".address_balance_result").html("<div class='invalid'>Is that a real address?</div>");
+        return;
+    }
+
+    $.ajax({
+        type: "GET",
+        url: "/api/balanceOf?address=" + _address
+    }).done(function( data ) {
+
+        $result_div = $(".address_balance_result");
+        if(data.success){
+            if(data.balance > 0){
+                $result_div.html("<div class='valid'>This address holds " + data.balance + " Ħ tokens</div>");
+            }else{
+                $result_div.html("<div class='valid'>This address does not hold any Ħ tokens</div>");
+            }
+
+        }else{
+            $result_div.html("<div class='invalid'>Sorry, we cannot find balance of this address.</div>");
+        }
+    });
+}
+
+$(".check_token_balance").click(function(){
+    check_token_balance();
+});
 
 $(".toggle_json").click(function(){
     $(".json_div").toggle();

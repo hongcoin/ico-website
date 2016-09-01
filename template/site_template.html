@@ -87,6 +87,16 @@ ul.top_navbar a:hover li{background-color: #ffebe4;}
 
 .copyright{color:#fff;font-size: 0.8em;}
 
+input[type=text]:focus:not([readonly]){
+    border-bottom: 1px solid #ff5722;
+    box-shadow: 0 1px 0 0 #ff5722;
+}
+input[type=text]:focus:not([readonly])+label{
+    color:#ff5722;
+}
+.address_balance_result div.valid{margin-top:10px;padding:4px 0;color:#060;font-weight: bold;}
+.address_balance_result div.invalid{margin-top:10px;padding:4px 0;color:#a00;}
+
 /* style for responsive youtube viewer */
 
 .video-container {
