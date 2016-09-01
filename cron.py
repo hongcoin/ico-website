@@ -4,6 +4,8 @@ import logging
 import traceback
 import webapp2
 
+from config import API_SERVER_HOSTNAME
+
 from webapp2_extras import routes
 
 from google.appengine.api import urlfetch
@@ -13,7 +15,7 @@ from google.appengine.api import urlfetch
 class UpdateIcoDataCronHandler(webapp2.RequestHandler):
     def get(self):
 
-        url = "http://146.148.99.121:5050/api/record"
+        url = "http://" + API_SERVER_HOSTNAME + ":5050/api/record"
         logging.info("url => " + url)
 
         try:

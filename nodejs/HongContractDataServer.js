@@ -43,6 +43,13 @@ function connect () {
 }
 
 
+function retrieve_hong_contract(){
+    contract_abi = options.storageConfig.contractAbi
+    contract_address = options.storageConfig.contractAddr
+    contract_obj = web3.eth.contract(contract_abi)
+    return contract_obj.at(contract_address)
+}
+
 var mysql = require('mysql');
 var connection;
 connect();
@@ -57,16 +64,9 @@ app.get('/', function(req, res){
     res.end('Hello world');
 });
 
+
 app.get('/api/record', function(req, res){
-    // redirect handler for contract form
-    contract_abi = options.storageConfig.contractAbi;
-    contract_address = options.storageConfig.contractAddr;
-
-    // console.log(contract_abi)
-    // console.log(contract_address)
-
-    contract_obj = web3.eth.contract(contract_abi);
-    hong = contract_obj.at(contract_address);
+    hong = retrieve_hong_contract()
 
     var contractBalance = web3.eth.getBalance(contract_address);
     var returnWalletBalance = web3.eth.getBalance(hong.returnWallet());
@@ -81,20 +81,10 @@ app.get('/api/record', function(req, res){
                              + web3.fromWei(rewardWalletBalance, "ether").toNumber()
                              + web3.fromWei(managementFeeWalletBalance, "ether").toNumber();
 
-
     var query = "INSERT INTO `ico_data` (`record_datetime`, `balance_total_eth`, `balance_main_eth`, "
                 + "`balance_mgmtfee_eth`, `balance_extra_eth`,"
                 + "`current_tier`, `token_available_current_tier`, `total_tokens_issued`, `bounty_issued`)"
                 + "VALUES (NOW(), ?, ?, ?, ?, ?, ?, ?, ?);";
-
-    console.log(query);
-    console.log([
-            totalContractBalance, web3.fromWei(contractBalance, "ether").toNumber(),
-            web3.fromWei(managementFeeWalletBalance, "ether").toNumber(),
-            web3.fromWei(extraBalanceWalletBalance, "ether").toNumber(),
-            hong.getCurrentTier().toNumber(), hong.tokensAvailableAtCurrentTier().toNumber(), hong.tokensCreated().toNumber(),
-            hong.bountyTokensCreated().toNumber()
-    ]);
 
     connection.query(
         query, [
@@ -108,15 +98,34 @@ app.get('/api/record', function(req, res){
         if (err) throw err;
     });
 
-
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.end('Done');
 });
 
 
+app.get('/api/balanceOf', function(req, res){
+    hong = retrieve_hong_contract()
+
+    query_address = req.query.address
+    if(!query_address){
+        res.writeHead(200, {'Content-Type': 'application/json'});
+        res.end(JSON.stringify({"success":false, "message":"MISSING_PARAMETER"}));
+    }
+    if(query_address.length != 42){
+        res.writeHead(200, {'Content-Type': 'application/json'});
+        res.end(JSON.stringify({"success":false, "message":"INVALID_ADDRESS"}));
+    }
+
+    balance = hong.balanceOf(query_address).toNumber()
+
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    res.end(JSON.stringify({"success":true, "balance": balance}));
+});
+
+
+
 app.post('/', function(req, res){
     console.log('POST /');
-    console.dir(req.body);
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.end('Thanks for trying, but nothing here :(');
 });
