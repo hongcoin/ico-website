@@ -105,23 +105,32 @@ app.get('/api/record', function(req, res){
 
 app.get('/api/balanceOf', function(req, res){
     hong = retrieve_hong_contract()
+    res.writeHead(200, {'Content-Type': 'application/json'})
 
     query_address = req.query.address
     if(!query_address){
-        res.writeHead(200, {'Content-Type': 'application/json'})
         res.end(JSON.stringify({"success": false, "message": "MISSING_PARAMETER"}))
         return
     }
     if(query_address.length != 42){
-        res.writeHead(200, {'Content-Type': 'application/json'})
         res.end(JSON.stringify({"success": false, "message": "INVALID_ADDRESS"}))
         return
     }
 
-    balance = hong.balanceOf(query_address).toNumber()
+    try{
+        balance = hong.balanceOf(query_address).toNumber()
+    } catch (err) {
+        console.trace(err);
 
-    res.writeHead(200, {'Content-Type': 'application/json'})
-    res.end(JSON.stringify({"success":true, "balance": balance}))
+        if (err instanceof BigNumberError) {
+            res.end(JSON.stringify({"success": false, "message": "INVALID_ADDRESS"}))
+        } else {
+            res.end(JSON.stringify({"success": false, "message": "SERVER_ERROR"}))
+        }
+        return
+    }
+
+    res.end(JSON.stringify({"success": true, "balance": balance}))
 });
 
 
