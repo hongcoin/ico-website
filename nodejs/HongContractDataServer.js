@@ -122,11 +122,7 @@ app.get('/api/balanceOf', function(req, res){
     } catch (err) {
         console.trace(err);
 
-        if (err instanceof BigNumberError) {
-            res.end(JSON.stringify({"success": false, "message": "INVALID_ADDRESS"}))
-        } else {
-            res.end(JSON.stringify({"success": false, "message": "SERVER_ERROR"}))
-        }
+        res.end(JSON.stringify({"success": false, "message": "INVALID_ADDRESS"}))
         return
     }
 
