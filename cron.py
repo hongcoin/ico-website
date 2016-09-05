@@ -15,7 +15,7 @@ from google.appengine.api import urlfetch
 class UpdateIcoDataCronHandler(webapp2.RequestHandler):
     def get(self):
 
-        url = "http://" + API_SERVER_HOSTNAME + ":5050/api/record"
+        url = "http://" + API_SERVER_HOSTNAME + "/api/record"
         logging.info("url => " + url)
 
         try:
