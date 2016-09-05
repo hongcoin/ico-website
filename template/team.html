@@ -1,0 +1,85 @@
+
+{% extends "site_template.html" %}
+
+
+
+
+{% block body_content %}
+
+<style type="text/css">
+.page_headline_bar{
+    font-size: 1.7em;padding:16px 0;border-top: 2px solid #ddd;border-bottom: 2px solid #ddd;
+    background-color:#f5f5f5;
+}
+.headline_subtitle{font-size: 0.6em;}
+.team_members{padding:20px 0; min-height: 440px;}
+.member_profile{min-height: 80px;line-height: 24px;}
+.member_pic{float:left;margin-right: 8px;}
+.member_pic img{width:49px;border-radius: 6px;}
+.member_name{font-weight: bold;display: inline-block;}
+.member_title{display: inline-block;color:#555;}
+</style>
+
+<div class="page_headline_bar">
+    <div class="container">
+        <div>
+            The Design Team
+        </div>
+
+        <div class="headline_subtitle">
+            who designs the HONG contract and maintains the contract operation.
+        </div>
+
+    </div>
+</div>
+
+<div class="container team_members">
+
+    <div class="row">
+        <div class="col l6 m12 s12">
+            <div class="member_profile">
+                <div class="member_pic"><img src="/images/im.png" /></div>
+                <div>
+                    <div class="member_name">Isaac Mao</div>
+                    <div class="member_title">Visionary, Chief Architect</div>
+                    <div class="member_description">#Sharism enthusiast, former Board Director of Tor Project</div>
+                </div>
+            </div>
+        </div>
+        <div class="col l6 m12 s12">
+            <div class="member_profile">
+                <div class="member_pic"><img src="/images/ph.png" /></div>
+                <div>
+                    <div class="member_name">Payne Huang</div>
+                    <div class="member_title">Business Director</div>
+                    <div class="member_description">Experience in telecommunication, finance, retail business, and now blockchain</div>
+                </div>
+            </div>
+        </div>
+        <div class="col l6 m12 s12">
+            <div class="member_profile">
+                <div class="member_pic"><img src="/images/wl.jpg" /></div>
+                <div>
+                    <div class="member_name">William Lau</div>
+                    <div class="member_title">Technical Lead</div>
+                    <div class="member_description">Tech savvy, passionate about the future of cryptocurrency</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>and a group of technical gurus.</div>
+</div>
+
+{% endblock %}
+
+
+
+{% block body_footerscript_content %}
+
+
+
+
+
+{% endblock %}
+
