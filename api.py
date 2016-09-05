@@ -22,7 +22,7 @@ class GetAddressTokenBalance(webapp2.RequestHandler):
             self.response.write(json.dumps({"success": False, "message": "INVALID_ADDRESS"}))
             return
 
-        url = "http://" + API_SERVER_HOSTNAME + ":5050/api/balanceOf?address=" + address
+        url = "http://" + API_SERVER_HOSTNAME + "/api/balanceOf?address=" + address
         logging.info("url => " + url)
 
         try:

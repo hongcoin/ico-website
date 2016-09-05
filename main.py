@@ -71,6 +71,13 @@ class MainHandler(webapp2.RequestHandler):
 
 
 
+class TeamProfileHandler(webapp2.RequestHandler):
+    def get(self):
+        template_values = {}
+        path = os.path.join(os.path.dirname(__file__), 'template/team.html')
+        self.response.out.write(template.render(path, template_values))
+
+
 class StatsHandler(webapp2.RequestHandler):
     def get(self):
         env = os.getenv('SERVER_SOFTWARE')
@@ -124,7 +131,9 @@ class HowItWorksHandler(webapp2.RequestHandler):
 
 class FAQHandler(webapp2.RequestHandler):
     def get(self):
-        self.redirect("/")
+        template_values = {}
+        path = os.path.join(os.path.dirname(__file__), 'template/faq.html')
+        self.response.out.write(template.render(path, template_values))
 
 
 class LetsEncryptHandler(webapp2.RequestHandler):
@@ -150,6 +159,7 @@ class NotFoundPageHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
+    ('/team', TeamProfileHandler),
     ('/stats', StatsHandler),
     ('/faq', FAQHandler),
     ('/how-it-works', HowItWorksHandler),
