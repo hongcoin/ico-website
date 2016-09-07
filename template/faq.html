@@ -19,9 +19,11 @@
 .member_name{font-weight: bold;display: inline-block;}
 .member_title{display: inline-block;color:#555;}
 
-.question_list{margin-bottom: 40px;}
-.question{font-weight: bold;font-size: 1.1em;margin:6px 0;margin-top: 30px;}
+.question_list{margin-bottom: 40px;background-color: #f5f5f5;}
+.question{font-weight: bold;font-size: 1.1em;margin:6px 0;}
 .answer{}
+.question_block{padding:14px 28px;border-bottom:8px solid #fff;}
+.question_block::last-child{border-bottom:none;}
 </style>
 
 <div class="page_headline_bar">
@@ -34,6 +36,7 @@
 </div>
 
 <div class="container">
+<div class="container question_container">
 
     <h4>ABOUT THE FUND</h4>
 
@@ -54,7 +57,7 @@
         <div class="question_block">
             <div class="question">If I invest in HONG, will my fund be locked during HONG's 4-year lifecycle?</div>
             <div class="answer">
-                HONG token is a transferrable token which is open and transparent from day one. Learning from the previous lessons in the cryptocurrency world, the HONG team decided to give more flexibility to the HONG token holders. Even during the ICO stage, a HONG token holder is able to withdraw the investment. After ICO ends and the funds start operating, HONG token holders will be able to vote for freezing the fund in order to get the investment back. They will also be able to transfer the tokens among each other. There is no "lock" of token holders' fund in HONG's lifecycle.
+                During the ICO stage, a HONG token holder is able to withdraw the investment. After ICO ends and the funds start operating, HONG token holders will be able to vote for freezing the fund in order to get the investment back. They will also be able to transfer the tokens among each other. There is no "lock" of token holders' fund in HONG's lifecycle.
 
             </div>
         </div>
@@ -87,6 +90,21 @@
     <h4>ABOUT THE ICO</h4>
 
     <div class="question_list">
+
+        <div class="question_block">
+            <div class="question">How long does the ICO last?</div>
+            <div class="answer">
+                HONG's ICO lasts firstly for 30 days (<u>from August 29, 2016 to September 28, 2016</u>), by the end of which the total token number will be checked. If the minimum target of issuing is not met, the ICO will be extended for another 30 days to <u>October 28, 2016</u>.
+            </div>
+        </div>
+
+        <div class="question_block">
+            <div class="question">Is there a target number of issuing?</div>
+            <div class="answer">
+                We set a minimum target of issuing <u>150M</u> of HONG tokens considering to sustain healthy operation of the fund. We also set a maximum target at <u>250M</u> tokens to ensure the fund is under control. More info about the ICO terms can be found on our <a href="https://github.com/hongcoin/DO/wiki/ICO-Period-and-Target" target="_blank">wiki page</a>.
+            </div>
+        </div>
+
         <div class="question_block">
             <div class="question">What wallets can I use to participate the ICO of HONG?</div>
             <div class="answer">
@@ -108,6 +126,7 @@
 
 
 
+</div>
 </div>
 
 {% endblock %}
