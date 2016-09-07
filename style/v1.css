@@ -9,6 +9,7 @@ ul.top_navbar{float:right; padding:0 6px;background-color: #ffd6c3;border-radius
 ul.top_navbar li{display: inline-block;padding:10px 14px;color: #ff3b3b;}
 ul.top_navbar a:hover li{background-color: #ffebe4;}
 .link_bar{position: absolute;bottom:10px;right:0;z-index: 1;}
+.link_bar a{margin-left: 6px;}
 
 .logo{width:180px;}
 .headline{font-size: 1.3em;color:#777;}

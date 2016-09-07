@@ -115,9 +115,26 @@ class StatsHandler(webapp2.RequestHandler):
             })
             # logging.info('{}'.format(r))
 
+        cursor = db.cursor()
+        cursor.execute(
+            "SELECT * FROM `ico_data` WHERE "
+            " `record_datetime` >= NOW() - INTERVAL 7 DAY "
+            "AND `record_datetime` like '%:00:%' ;")
+
+        result2 = []
+        for r in cursor.fetchall():
+            result2.append({
+                "time": totimestamp(r[1]) * 1000,
+                "ether": r[2],
+                "current_tier_remaining": r[7],
+                "tokens_issued": r[8]
+            })
+            # logging.info('{}'.format(r))
+
 
         template_values = {
-            "result": result
+            "result": result,
+            "result2": result2
         }
 
         path = os.path.join(os.path.dirname(__file__), 'template/stats.html')
