@@ -6,9 +6,30 @@
 
 {% block body_content %}
 
+<style type="text/css">
+
+.page_headline_bar{
+    font-size: 1.7em;padding:16px 0;border-top: 2px solid #ddd;border-bottom: 2px solid #ddd;
+    background-color:#f5f5f5;
+}
+
+</style>
+
+<div class="page_headline_bar">
+    <div class="container">
+        <div>
+            Stats
+        </div>
+
+    </div>
+</div>
+
 <div class="container">
     <div>
         <div id="chart_div" style="height: 500px;"></div>
+    </div>
+    <div>
+        <div id="chart2_div" style="height: 500px;"></div>
     </div>
 </div>
 
@@ -24,6 +45,8 @@
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
+
+        /* Chart 1 */
         var data = google.visualization.arrayToDataTable([
             ['Time', 'Ether funded'],
             {% for rec in result %}
@@ -43,6 +66,27 @@
         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
 
         chart.draw(data, options);
+
+
+        /* Chart 2 */
+        data = google.visualization.arrayToDataTable([
+            ['Time', 'Ether funded'],
+            {% for rec in result2 %}
+                [new Date({{rec.time}}),  {{rec.ether}}]{% if not forloop.last %},{% endif %}
+            {% endfor %}
+        ]);
+        options = {
+            title: 'Total Ether funded in last 7 days (Local timezone)',
+            chartArea: {width: '80%'},
+            hAxis: {
+                format: 'dd MMM HH:mm'
+            },
+            legend: { position: 'bottom' }
+        };
+
+        var chart2 = new google.visualization.LineChart(document.getElementById('chart2_div'));
+
+        chart2.draw(data, options);
     }
 
 </script>
