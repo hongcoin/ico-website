@@ -153,6 +153,13 @@ class FAQHandler(webapp2.RequestHandler):
         self.response.out.write(template.render(path, template_values))
 
 
+class ContractViewerHandler(webapp2.RequestHandler):
+    def get(self):
+        template_values = {}
+        path = os.path.join(os.path.dirname(__file__), 'template/contract.html')
+        self.response.out.write(template.render(path, template_values))
+
+
 class LetsEncryptHandler(webapp2.RequestHandler):
 
     def get(self, challenge):
@@ -182,7 +189,7 @@ app = webapp2.WSGIApplication([
     ('/stats', StatsHandler),
     ('/faq', FAQHandler),
     ('/how-it-works', HowItWorksHandler),
-    ('/api', HowItWorksHandler),
+    ('/contract', ContractViewerHandler),
     ('/.well-known/acme-challenge/([\w-]+)', LetsEncryptHandler),
     ('/.*', NotFoundPageHandler),
 ], debug=True)

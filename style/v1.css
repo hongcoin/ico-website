@@ -27,6 +27,12 @@ ul.top_navbar a:hover li{background-color: #ffebe4;}
 .footer_block .links_ui{float:right;}
 .footer_block nav ul a:hover{background-color: rgba(255,255,255,0.1);}
 
+.page_headline_bar{
+    font-size: 1.7em;padding:16px 0;border-top: 2px solid #ddd;border-bottom: 2px solid #ddd;
+    background-color:#f5f5f5;
+}
+.headline_subtitle{font-size: 0.6em;}
+
 .section{overflow: hidden;}
 .section_supp{font-size: 0.9em;font-style: italic;color:#aaa;display: inline-block;float: right;margin:6px 0;}
 .section_item{}
