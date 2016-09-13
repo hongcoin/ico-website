@@ -51,7 +51,8 @@
         Scroll down to browse contract ↓
     </div>
     <div class="comment_block explanation" data-inserttoline="24" data-minline="24" data-maxline="43">
-        The configuration of HONG contract
+        The configuration of HONG contract<br/><br/>
+        More details can be found at <a href="https://github.com/hongcoin/DO/wiki/About-the-Smart-Contract:-Understanding-the-variables" target="_blank">Wiki Page: About the Smart Contract: Understanding the variables</a>
     </div>
     <div class="comment_block explanation" data-inserttoline="37" data-minline="40" data-maxline="42">
         The required percentage for a valid voting result:<br/>
@@ -62,24 +63,64 @@
         More details can be found at <a href="https://github.com/hongcoin/DO/wiki/Voting-mechanism-for-The-HONG" target="_blank">Wiki Page: About voting mechanism of HONG</a>
     </div>
     <div class="comment_block explanation" data-inserttoline="46" data-minline="45" data-maxline="54">
-        The error handler class. In live contract, value of isInTestMode is set to be false. All cases triggering doThrow will throw instead of marking a log message.
+        The error handler contract. In live contract, value of isInTestMode is set to be false. All exceptional cases will trigger `doThrow`, which stops executing the action. When isInTestMode = false, it simply stops execution instead of records a log message.
+    </div>
+    <div class="comment_block explanation" data-inserttoline="56" data-minline="56" data-maxline="70">
+        The TokenInterface contract: defines the operations relating to token holders.
     </div>
     <div class="comment_block explanation" data-inserttoline="66" data-minline="67" data-maxline="69">
         onlyTokenHolders modifier ensures the function should be triggered by HONG token holders.
+    </div>
+    <div class="comment_block explanation" data-inserttoline="78" data-minline="78" data-maxline="80">
+        Check token balance of a specific account address
+    </div>
+    <div class="comment_block explanation" data-inserttoline="82" data-minline="82" data-maxline="93">
+        The framework to transfer tokens to external address. It is triggered by transfer() from line 807.
     </div>
     <div class="comment_block explanation" data-inserttoline="97" data-minline="97" data-maxline="133">
         We defined OwnedAccount to control flux of money during contract execution.
         <br/><br/>
         More details can be found at <a href="https://github.com/hongcoin/DO/wiki/Money-flux-in-the-HONG-contract" target="_blank">Wiki Page: Money flux in the HONG contract</a>
     </div>
+    <div class="comment_block explanation" data-inserttoline="135" data-minline="135" data-maxline="162">
+        Definition of ReturnWallet
+    </div>
+    <div class="comment_block explanation" data-inserttoline="143" data-minline="143" data-maxline="149">
+        Carry interest is paid to management team
+    </div>
+    <div class="comment_block explanation" data-inserttoline="151" data-minline="151" data-maxline="161">
+        Fund distribution process to be triggered by token holders.
+    </div>
+    <div class="comment_block explanation" data-inserttoline="164" data-minline="164" data-maxline="184">
+        Definition of ExtraBalanceWallet. This wallet collects extra amount spent to get Hong Tokens for bookkeeping purpose, if they are not sold at a price of 1.00Eth to 100 Hong tokens.
+    </div>
+    <div class="comment_block explanation" data-inserttoline="169" data-minline="170" data-maxline="173">
+         Internal function to be triggered when transferring balance to MainAccount in the first fiscal year. This is triggered from line 691.
+    </div>
+    <div class="comment_block explanation" data-inserttoline="173" data-minline="175" data-maxline="177">
+        Internal function to be triggered when token holder triggers to refund ICO investment. It sends balance to MainAccount and then return to investors. This is triggered from line 412.
+    </div>
+    <div class="comment_block explanation" data-inserttoline="186" data-minline="186" data-maxline="196">
+        Definition of RewardWallet. This serves as the wallet to collect income after project is successful and rewarding profit.
+    </div>
     <div class="comment_block explanation" data-inserttoline="198" data-minline="198" data-maxline="214">
         ManagementFeeWallet serves the purpose to reserve 8% of the management fee in a separate wallet. The annual 2% management fee will only distribute to management body once a new fiscal year is voted to kickoff.
     </div>
     <div class="comment_block explanation" data-inserttoline="244" data-minline="244" data-maxline="267">
-        Some modifier for safeguarding operation of the HONG fund.
+        A set of modifiers for safeguarding operation of HONG fund.
+    </div>
+    <div class="comment_block explanation" data-inserttoline="303" data-minline="303" data-maxline="565">
+        HONG token creation contract.
+    </div>
+    <div class="comment_block explanation" data-inserttoline="306" data-minline="304" data-maxline="314">
+        managementBodyAddress is specified when contract is being created.<br/><br/>
+        onlyManagementBody() modifier ensures certain actions can be executed by management body only.
     </div>
     <div class="comment_block explanation" data-inserttoline="316" data-minline="316" data-maxline="383">
         Create tokens when Ether is sent to the contract
+    </div>
+    <div class="comment_block explanation" data-inserttoline="332" data-minline="332" data-maxline="357">
+        Issue tokens in tiers with different prices
     </div>
     <div class="comment_block explanation" data-inserttoline="336" data-minline="337" data-maxline="340">
         We accept all of last deposit exceeding maxTokensToCreate and convert all to tokens. We do not accept further deposit afterwards.
@@ -88,10 +129,16 @@
         Calls tryToLockFund() in #490 to check fund locking condition after deposit is made.
     </div>
     <div class="comment_block explanation" data-inserttoline="385" data-minline="385" data-maxline="423">
-        refundMyIcoInvestment(): for users claim their refund before ICO ends.
+        refundMyIcoInvestment(): token holders can refund investments during ICO stage
     </div>
     <div class="comment_block explanation" data-inserttoline="434" data-minline="434" data-maxline="445">
         mgmtIssueBountyToken(): the function to issue bounty tokens.  It is only executable by management body.
+    </div>
+    <div class="comment_block explanation" data-inserttoline="446" data-minline="447" data-maxline="449">
+        mgmtDistribute(): only management team can execute distribution. This function is also restricted by several conditions.
+    </div>
+    <div class="comment_block explanation" data-inserttoline="451" data-minline="451" data-maxline="478">
+        istributeDownstream(): distribute returns from projects invested to ReturnWallet and allocate management team carry interests, and token holders can claim their returns
     </div>
     <div class="comment_block explanation" data-inserttoline="490" data-minline="490" data-maxline="524">
         tryToLockFund(): Checks the condition after Ether is deposited into contract.
@@ -109,7 +156,7 @@
         This indicates parameters required when creating the HONG contract.
     </div>
     <div class="comment_block explanation" data-inserttoline="656" data-minline="658" data-maxline="658">
-        Token holders can voteToKickoffNewFiscalYear() when the fund is locked. The voting process should not involve any Ether.
+        Token holders can voteToKickoffNewFiscalYear() when the fund is locked. The voting process should not involve transferring any Ether.
     </div>
     <div class="comment_block explanation" data-inserttoline="689" data-minline="689" data-maxline="702">
         When the fund is able to kickoff for the first time, 8% (2% per year, for 4 years) of the fund will be sent to managementFeePoolWallet to be reserved as the management fee.
@@ -118,13 +165,13 @@
         2% of the fund will be sent from managementFeePoolWallet to managementBodyAddress for the management fee every fiscal year after the fund is voted to kickoff().
     </div>
     <div class="comment_block explanation" data-inserttoline="715" data-minline="715" data-maxline="727">
-        Token holders can voteToFreezeFund() when the fund is locked before year 4 is voted to kickoff(). The voting process should not involve any Ether.
+        Token holders can voteToFreezeFund() when the fund is locked before year 4 is voted to kickoff(). The voting process should not involve transferring any Ether.
     </div>
     <div class="comment_block explanation" data-inserttoline="728" data-minline="729" data-maxline="732">
         Token holders can recallVoteToFreezeFund() if they voted to freeze fund before and would like to change their decision.
     </div>
     <div class="comment_block explanation" data-inserttoline="734" data-minline="734" data-maxline="745">
-        Token holders can voteToHarvestFund() in the final fiscal year (after year 4 is voted to kickoff) to approve management body to harvest fund. The voting process should not involve any Ether.
+        Token holders can voteToHarvestFund() in the final fiscal year (after year 4 is voted to kickoff) to approve management body to harvest fund. The voting process should not involve transferring any Ether.
     </div>
     <div class="comment_block explanation" data-inserttoline="747" data-minline="747" data-maxline="751">
         Token holders can collectMyReturn() when the fund is available for distribution.
