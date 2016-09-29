@@ -5,41 +5,48 @@
 {% block body_content %}
 
 <style type="text/css">
-.important_reminder{
-    font-size: 0.7em;
-    color: #ff0000;
+.ico_announcement{
+    color:#555;
+    font-size: 0.6em;
+    line-height:
 }
+.ico_announcement p{
+    margin:30px 2px;
+}
+
 </style>
 
 
-<div class="home_background full_block">
+<div class="home_background full_block" style="min-height:680px;">
     <div class="container">
         <div class="row">
             <div class="col l12 s12">
 
                 <div class="section ico_section">
                     <div class="section_item"><div class="section_item_inner">
-                        <div class="section_announcement">ICO is in progress!  <br/>
-                        <span class="important_reminder">(Important: Please do not purchase from exchange wallet directly.
-                        <a href="/faq#notice_for_exchange" class="download_json">Learn More</a>)</span></div>
+                        <div class="section_announcement">The closure of ICO<br/>
+                        <div class="ico_announcement">
 
-                        <div class="info_title">HONG Contract Address</div>
-                        <div class="info_value ico_address_value ">0x9Fa8fA61A10Ff892E4EBCeB7f4e0FC684C2ce0a9 </div>
-                        <div>
-                            Deposit with <a href="https://github.com/ethereum/mist/releases" class="download_json" target="_blank">Ethereum Wallet, Mist</a>, or <a href="/faq#deposit" class="download_json" target="_blank">other methods</a>.
-                        </div>
+<p>Dear HONG investors and supporters,</p>
 
-                        <div class="row">
-                            <div class="col m6 s12">
-                                <div class="info_title">HONG Contract JSON Interface</div>
-                                <a class="waves-effect waves-light btn orange accent-3 copy_json" >Copy JSON</a>
-                                or <a href="/download/hong.json" class="download_json" target="_blank">Download JSON</a>
+<p>
+It has been a great month since we started HONG ICO and we have received a lot of resonates from community, including real funding to our smart contract.</p>
 
-                            </div>
-                            <div class="col m6 s12">
-                                <div class="info_title">Already a HONG token holder?</div>
-                                <a class="waves-effect waves-light btn orange accent-3 open_token_balance_modal" href="#token_balance">Check my Ħ token balance</a>
-                            </div>
+<p>
+Based on our design, the experiment of smart contract as first venture capital fund on cryptocurrency has been very successful to test its feasibility and security. And of course, there are definitely some limitations and lessons we learnt.  However, to HONG team, there is a longer and higher goal in front of us, so we decide to pause HONG’s fund raising here and will not extend ICO even the contract has 2nd extension period. </p>
+
+<p>
+We hope you also enjoyed this journey with us and please follow the instruction of "<a href="https://medium.com/@hongcoin/how-to-get-refund-from-hong-3498672db6fb#.mkw1vb87z" target="_blank" style="color:#555">HOW TO REFUND</a>" to have your investment refunded in HONG contract.  If you encounter any issue for your refund, please email us (<a href="mailto:hongcoin@hongcoin.org" class="download_json">hongcoin@hongcoin.org</a>) with details of the issue and your wallet address. We will respond to you as soon as possible.  </p>
+
+<p>
+We will be back soon to present you a bigger project based on this profound experience.
+</p>
+
+<p>Best regards</p>
+
+<p>Project HONG Team<br/>
+September, 29, 2016</p>
+
                         </div>
 
 
@@ -50,125 +57,11 @@
         </div>
     </div>
 
-<div class="full_block price_block">
-    <div class="container">
-        <div class="row">
-
-            <div class="col l3 m6 s12">
-                <div class="section">
-                    <span class="ico_stat_text">{{ total_tokens_sold }}</span>
-                    <span class="ico_tip_text">total Ħ Tokens issued</span>
-                </div>
-            </div>
-
-            <div class="col l3 m6 s12">
-                <div class="section">
-                    <span class="ico_stat_text">{{ total_ether }}</span>
-                    <span class="ico_tip_text">total ether funded</span>
-                </div>
-            </div>
-
-            <div class="col l3 m6 s12">
-                <div class="section">
-                    <span class="ico_stat_text">{{ total_tokens_price }} Ether</span>
-                    <span class="ico_tip_text">current price for 100 Ħ</span>
-                </div>
-            </div>
-
-            <div class="col l3 m6 s12">
-                <div class="section">
-                    <span class="ico_stat_text">{{ tokens_current_tier }}</span>
-                    <span class="ico_tip_text">Ħ remaining at current tier</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="section_supp">Updated every 10 mins - Last updated at {{ update_datetime|date:"M j, H:i"}} GMT+0</div>
-
-    </div>
-</div>
 
 
 </div>
+<div style="height:60px;"></div>
 
-
-<div id="token_balance" class="modal">
-    <div class="modal-content">
-        <div class="info_title">What is your Ethereum wallet address?</div>
-        <div class="input-field">
-            <input id="ethereum_address_input" type="text" class="validate">
-            <label for="ethereum_address_input">Ethereum Address</label>
-        </div>
-
-        <a class="waves-effect waves-light btn orange accent-3 check_token_balance" >Check my balance</a>
-
-        <div class="address_balance_result"></div>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-</div>
-
-
-<div class="container">
-    <div class="row">
-
-        <div class="col l8 s12">
-
-
-
-            <div class="section">
-                <div class="section_item"><div class="section_item_inner ico_details_box">
-
-                    <div class="section_title">ICO Details</div>
-
-                    <div class="info_title">ICO Starts on</div>
-                    <div class="info_value">August 29, 2016 19:00 GMT+8</div>
-
-                    <div class="info_title">ICO ends on</div>
-                    <div class="info_value">September 28, 2016 21:00 GMT+8</div>
-                    <!--
-                    <div class="info_value">September 28, 2016 21:00 GMT+8 / October 28, 2016 21:00 GMT+8*</div>
-                    <div class="info_tips">On September 28, if ICO does not reach the minimum target we have set, we will extend the ICO period by 30 days.</div>
-                    -->
-
-                    <div class="info_title">Price details</div>
-
-                    <div id="price_tier_chart" style="height: 350px;"></div>
-                    <div id="tokens_issued_chart" style="height: 80px;"></div>
-                    <div class="info_value price_box">
-    <table>
-    <tr><td>Tier 1</td><td>1.00 ETH for 100 Ħ (total 50M Ħ)</td></tr>
-    <tr><td>Tier 2</td><td>1.05 ETH for 100 Ħ (total 50M Ħ)</td></tr>
-    <tr><td>Tier 3</td><td>1.10 ETH for 100 Ħ (total 50M Ħ)</td></tr>
-    <tr><td>Tier 4</td><td>1.15 ETH for 100 Ħ (total 50M Ħ)</td></tr>
-    <tr><td>Tier 5</td><td>1.20 ETH for 100 Ħ (total 50M Ħ)</td></tr>
-    </table>
-</div>
-                    <div class="info_tips">Token price is dynamically updated based on a number of tokens issued. Early birds can get tokens at a relatively low price.</div>
-
-                </div></div>
-            </div>
-
-        </div>
-        <div class="col l4 s12">
-
-            <div class="section">
-                <div class="section_item"><div class="section_item_inner">
-
-                    <div class="section_title">What is HONG?</div>
-                    <div class="video-container">
-<iframe width="640" height="360" src="https://www.youtube.com/embed/dr1dwKkSu7k?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div></div>
-            </div>
-
-        </div>
-    </div>
-
-
-
-</div>
 
 {% endblock %}
 
@@ -178,134 +71,5 @@
 
 
 {% block body_footerscript_content %}
-
-<script type="text/javascript">
-
-var check_token_balance = function(){
-
-    var _address = $("#ethereum_address_input").val();
-
-    if(_address == ""){
-        $(".address_balance_result").html("<div class='invalid'>Please enter an address</div>");
-        return;
-    }
-
-    if(_address.length != 42){
-        $(".address_balance_result").html("<div class='invalid'>Is that a real address?</div>");
-        return;
-    }
-
-    $.ajax({
-        type: "GET",
-        url: "/api/balanceOf?address=" + _address
-    }).done(function( data ) {
-
-        $result_div = $(".address_balance_result");
-        if(data.success){
-            if(data.balance > 0){
-                $result_div.html("<div class='valid'>This address holds " + data.balance + " Ħ tokens</div>");
-            }else{
-                $result_div.html("<div class='valid'>This address does not hold any Ħ tokens</div>");
-            }
-
-        }else{
-            $result_div.html("<div class='invalid'>Sorry, we cannot find balance of this address.</div>");
-        }
-    });
-}
-
-$(".check_token_balance").click(function(){
-    check_token_balance();
-});
-
-
-$(".copy_json").click(function(){
-
-    var copyTextarea = document.querySelector('#json_text');
-    copyTextarea.select();
-
-    try {
-        var successful = document.execCommand('copy');
-        var msg = successful ? 'successful' : 'unsuccessful';
-        console.log('Copying text command was ' + msg);
-        $(".copy_json").html("Copied to clipboard!").addClass("lighten-2").removeClass("accent-3");
-    } catch (err) {
-        console.log('Oops, unable to copy');
-    }
-});
-
-
-$(".open_token_balance_modal").leanModal({
-    dismissible: true, // Modal can be dismissed by clicking outside of the modal
-    opacity: .5, // Opacity of modal background
-    in_duration: 300, // Transition in duration
-    out_duration: 200, // Transition out duration
-    starting_top: '4%', // Starting top style attribute
-    ending_top: '10%' // Ending top style attribute
-});
-
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-        ['Tier',  'Price per 100 HONG Tokens in ETH'],
-        ['0-50M', 1],
-        ['50M-100M', 1.05],
-        ['100M-150M', 1.1],
-        ['150M-200M', 1.15],
-        ['200M-250M', 1.2]
-    ]);
-
-    var options = {
-        backgroundColor: { fill:'transparent' },
-        chartArea: {width: '80%', height: '80%'},
-        title: 'Price Tier of HONG Tokens',
-        legend: { position: "none" },
-        vAxis: {
-            minValue: 0.9,
-            ticks: [0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25]
-        }
-    };
-
-    var chart = new google.visualization.SteppedAreaChart(document.getElementById('price_tier_chart'));
-
-    chart.draw(data, options);
-
-
-    var data2 = google.visualization.arrayToDataTable([
-        ['', 'Tokens issued',],
-        ['', {{ total_tokens_sold }}]
-    ]);
-
-    var options2 = {
-        title: 'Tokens issued vs ICO targets',
-        backgroundColor: { fill:'transparent' },
-        chartArea: {width: '80%', height: '30%'},
-        legend: { position: "none" },
-        hAxis: {
-            minValue: 0,
-            maxValue: 250000000,
-            ticks: [{v:150000000, f:'min target'}, {v:250000000, f:'max target'}]
-        }
-    };
-
-    var chart2 = new google.visualization.BarChart(document.getElementById('tokens_issued_chart'));
-    chart2.draw(data2, options2);
-}
-
-</script>
-
-
-
-
-
-<style type="text/css">
-#json_text{
-    position:absolute;top:-500px;height:20px;width:20px;
-}
-</style>
-
-<textarea id="json_text">[ { "constant": true, "inputs": [], "name": "isFundReleased", "outputs": [ { "name": "", "type": "bool", "value": false } ], "type": "function" }, { "constant": false, "inputs": [], "name": "mgmtDistribute", "outputs": [], "type": "function" }, { "constant": true, "inputs": [], "name": "name", "outputs": [ { "name": "", "type": "string", "value": "HONG" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "weiPerInitialHONG", "outputs": [ { "name": "", "type": "uint256", "value": "10000000000000000" } ], "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" } ], "name": "votedHarvest", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "minTokensToCreate", "outputs": [ { "name": "", "type": "uint256", "value": "150000000" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "supportHarvestQuorum", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "extraBalanceWallet", "outputs": [ { "name": "", "type": "address", "value": "0x034cf4f8e828195c353a03ae00ddcf137c424a05" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "totalInitialBalance", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "divisor", "outputs": [ { "name": "divisor", "type": "uint256", "value": "100" } ], "type": "function" }, { "constant": false, "inputs": [], "name": "voteToHarvestFund", "outputs": [], "type": "function" }, { "constant": true, "inputs": [], "name": "decimals", "outputs": [ { "name": "", "type": "uint8", "value": "0" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "pricePerTokenAtCurrentTier", "outputs": [ { "name": "", "type": "uint256", "value": "10000000000000000" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "mgmtFeePercentage", "outputs": [ { "name": "", "type": "uint256", "value": "8" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "tokensCreated", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "isDistributionReady", "outputs": [ { "name": "", "type": "bool", "value": false } ], "type": "function" }, { "constant": true, "inputs": [], "name": "closingTimeExtensionPeriod", "outputs": [ { "name": "", "type": "uint256", "value": "2592000" } ], "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "uint256" }, { "name": "", "type": "address" } ], "name": "votedKickoff", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "closingTime", "outputs": [ { "name": "", "type": "uint256", "value": "1475067600" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "lastKickoffDateBuffer", "outputs": [ { "name": "", "type": "uint256", "value": "26265600" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "isDayThirtyChecked", "outputs": [ { "name": "", "type": "bool", "value": false } ], "type": "function" }, { "constant": true, "inputs": [], "name": "isFreezeEnabled", "outputs": [ { "name": "", "type": "bool", "value": false } ], "type": "function" }, { "constant": false, "inputs": [], "name": "collectMyReturn", "outputs": [], "type": "function" }, { "constant": true, "inputs": [], "name": "isMinTokensReached", "outputs": [ { "name": "", "type": "bool", "value": false } ], "type": "function" }, { "constant": true, "inputs": [], "name": "isDistributionInProgress", "outputs": [ { "name": "", "type": "bool", "value": false } ], "type": "function" }, { "constant": true, "inputs": [], "name": "lastKickoffDate", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "managementFeeWallet", "outputs": [ { "name": "", "type": "address", "value": "0xd9c13f728f924d81a3a4dfd61f77b17ee4f9ba0b" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "supportFreezeQuorum", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "type": "function" }, { "constant": true, "inputs": [ { "name": "_owner", "type": "address" } ], "name": "balanceOf", "outputs": [ { "name": "balance", "type": "uint256", "value": "0" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "tokensAvailableAtCurrentTier", "outputs": [ { "name": "", "type": "uint256", "value": "50000000" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "getCurrentTier", "outputs": [ { "name": "", "type": "uint8", "value": "0" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "isFundLocked", "outputs": [ { "name": "", "type": "bool", "value": false } ], "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" } ], "name": "votedFreeze", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "returnWallet", "outputs": [ { "name": "", "type": "address", "value": "0x91d097caec172c4b278983aebe8f8ab9a090ae4e" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "kickoffQuorumPercent", "outputs": [ { "name": "", "type": "uint256", "value": "20" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "isMaxTokensReached", "outputs": [ { "name": "", "type": "bool", "value": false } ], "type": "function" }, { "constant": true, "inputs": [], "name": "freezeQuorumPercent", "outputs": [ { "name": "", "type": "uint256", "value": "50" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [ { "name": "", "type": "string", "value": "Ħ" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "maxTokensToCreate", "outputs": [ { "name": "", "type": "uint256", "value": "250000000" } ], "type": "function" }, { "constant": false, "inputs": [ { "name": "_projectWallet", "type": "address" }, { "name": "_amount", "type": "uint256" } ], "name": "mgmtInvestProject", "outputs": [ { "name": "_success", "type": "bool" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "isHarvestEnabled", "outputs": [ { "name": "", "type": "bool", "value": false } ], "type": "function" }, { "constant": true, "inputs": [], "name": "tokensPerTier", "outputs": [ { "name": "", "type": "uint256", "value": "50000000" } ], "type": "function" }, { "constant": false, "inputs": [ { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "transfer", "outputs": [ { "name": "success", "type": "bool" } ], "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" } ], "name": "taxPaid", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "maxBountyTokens", "outputs": [ { "name": "", "type": "uint256", "value": "2000000" } ], "type": "function" }, { "constant": false, "inputs": [], "name": "voteToKickoffNewFiscalYear", "outputs": [], "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "uint256" } ], "name": "supportKickoffQuorum", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "isInTestMode", "outputs": [ { "name": "", "type": "bool", "value": false } ], "type": "function" }, { "constant": true, "inputs": [], "name": "managementBodyAddress", "outputs": [ { "name": "", "type": "address", "value": "0xb79ab5993cef2e0b714a66f3eda73b55de812d31" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "harvestQuorumPercent", "outputs": [ { "name": "", "type": "uint256", "value": "20" } ], "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "uint256" } ], "name": "isKickoffEnabled", "outputs": [ { "name": "", "type": "bool", "value": false } ], "type": "function" }, { "constant": true, "inputs": [], "name": "mgmtRewardPercentage", "outputs": [ { "name": "", "type": "uint256", "value": "20" } ], "type": "function" }, { "constant": false, "inputs": [], "name": "recallVoteToFreezeFund", "outputs": [], "type": "function" }, { "constant": true, "inputs": [], "name": "bountyTokensCreated", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "annualManagementFee", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "type": "function" }, { "constant": true, "inputs": [ { "name": "_currentTier", "type": "uint8" }, { "name": "_tokensPerTier", "type": "uint256" }, { "name": "_tokensCreated", "type": "uint256" } ], "name": "tokensAvailableAtTierInternal", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "isDaySixtyChecked", "outputs": [ { "name": "", "type": "bool", "value": false } ], "type": "function" }, { "constant": false, "inputs": [], "name": "voteToFreezeFund", "outputs": [], "type": "function" }, { "constant": false, "inputs": [], "name": "refundMyIcoInvestment", "outputs": [], "type": "function" }, { "constant": true, "inputs": [], "name": "rewardWallet", "outputs": [ { "name": "", "type": "address", "value": "0x1af7e2deea2265be32832ee2877039e18a63a98d" } ], "type": "function" }, { "constant": false, "inputs": [ { "name": "_recipientAddress", "type": "address" }, { "name": "_amount", "type": "uint256" } ], "name": "mgmtIssueBountyToken", "outputs": [ { "name": "", "type": "bool" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "currentFiscalYear", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "type": "function" }, { "inputs": [ { "name": "_managementBodyAddress", "type": "address", "index": 0, "typeShort": "address", "bits": "", "displayName": "&thinsp;<span class=\"punctuation\">_</span>&thinsp;management Body Address", "template": "elements_input_address", "value": "0xb79Ab5993Cef2E0B714A66F3edA73b55DE812D31" }, { "name": "_closingTime", "type": "uint256", "index": 1, "typeShort": "uint", "bits": "256", "displayName": "&thinsp;<span class=\"punctuation\">_</span>&thinsp;closing Time", "template": "elements_input_uint", "value": "1475067600" }, { "name": "_closingTimeExtensionPeriod", "type": "uint256", "index": 2, "typeShort": "uint", "bits": "256", "displayName": "&thinsp;<span class=\"punctuation\">_</span>&thinsp;closing Time Extension Period", "template": "elements_input_uint", "value": "2592000" }, { "name": "_lastKickoffDateBuffer", "type": "uint256", "index": 3, "typeShort": "uint", "bits": "256", "displayName": "&thinsp;<span class=\"punctuation\">_</span>&thinsp;last Kickoff Date Buffer", "template": "elements_input_uint", "value": "26265600" }, { "name": "_minTokensToCreate", "type": "uint256", "index": 4, "typeShort": "uint", "bits": "256", "displayName": "&thinsp;<span class=\"punctuation\">_</span>&thinsp;min Tokens To Create", "template": "elements_input_uint", "value": "150000000" }, { "name": "_maxTokensToCreate", "type": "uint256", "index": 5, "typeShort": "uint", "bits": "256", "displayName": "&thinsp;<span class=\"punctuation\">_</span>&thinsp;max Tokens To Create", "template": "elements_input_uint", "value": "250000000" }, { "name": "_tokensPerTier", "type": "uint256", "index": 6, "typeShort": "uint", "bits": "256", "displayName": "&thinsp;<span class=\"punctuation\">_</span>&thinsp;tokens Per Tier", "template": "elements_input_uint", "value": "50000000" }, { "name": "_isInTestMode", "type": "bool", "index": 7, "typeShort": "bool", "bits": "", "displayName": "&thinsp;<span class=\"punctuation\">_</span>&thinsp;is In Test Mode", "template": "elements_input_bool", "value": false } ], "type": "constructor" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "msg_sender", "type": "address" }, { "indexed": false, "name": "msg_value", "type": "uint256" }, { "indexed": false, "name": "_amount", "type": "uint256" }, { "indexed": false, "name": "_success", "type": "bool" } ], "name": "evIssueManagementFee", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "msg_sender", "type": "address" }, { "indexed": false, "name": "msg_value", "type": "uint256" }, { "indexed": false, "name": "_recipientAddress", "type": "address" }, { "indexed": false, "name": "_amount", "type": "uint256" }, { "indexed": false, "name": "_success", "type": "bool" } ], "name": "evMgmtIssueBountyToken", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "msg_sender", "type": "address" }, { "indexed": false, "name": "msg_value", "type": "uint256" }, { "indexed": false, "name": "_amount", "type": "uint256" }, { "indexed": false, "name": "_success", "type": "bool" } ], "name": "evMgmtDistributed", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "msg_sender", "type": "address" }, { "indexed": false, "name": "msg_value", "type": "uint256" }, { "indexed": false, "name": "_projectWallet", "type": "address" }, { "indexed": false, "name": "_amount", "type": "uint256" }, { "indexed": false, "name": "result", "type": "bool" } ], "name": "evMgmtInvestProject", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "msg_sender", "type": "address" }, { "indexed": false, "name": "msg_value", "type": "uint256" } ], "name": "evLockFund", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "msg_sender", "type": "address" }, { "indexed": false, "name": "msg_value", "type": "uint256" } ], "name": "evReleaseFund", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "msg_sender", "type": "address" }, { "indexed": false, "name": "msg_value", "type": "uint256" }, { "indexed": true, "name": "_from", "type": "address" }, { "indexed": true, "name": "_to", "type": "address" }, { "indexed": false, "name": "_amount", "type": "uint256" } ], "name": "evTransfer", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "msg_sender", "type": "address" }, { "indexed": false, "name": "msg_value", "type": "uint256" }, { "indexed": false, "name": "value", "type": "uint256" } ], "name": "evMinTokensReached", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "msg_sender", "type": "address" }, { "indexed": false, "name": "msg_value", "type": "uint256" }, { "indexed": true, "name": "to", "type": "address" }, { "indexed": false, "name": "amount", "type": "uint256" } ], "name": "evCreatedToken", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "msg_sender", "type": "address" }, { "indexed": false, "name": "msg_value", "type": "uint256" }, { "indexed": true, "name": "to", "type": "address" }, { "indexed": false, "name": "value", "type": "uint256" }, { "indexed": false, "name": "result", "type": "bool" } ], "name": "evRefund", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "msg_sender", "type": "address" }, { "indexed": false, "name": "msg_value", "type": "uint256" }, { "indexed": false, "name": "_fiscal", "type": "uint256" } ], "name": "evKickoff", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "msg_sender", "type": "address" }, { "indexed": false, "name": "msg_value", "type": "uint256" } ], "name": "evFreeze", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "msg_sender", "type": "address" }, { "indexed": false, "name": "msg_value", "type": "uint256" } ], "name": "evHarvest", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "msg_sender", "type": "address" }, { "indexed": false, "name": "msg_value", "type": "uint256" }, { "indexed": false, "name": "message", "type": "string" } ], "name": "evRecord", "type": "event" } ]
-</textarea>
 
 {% endblock %}

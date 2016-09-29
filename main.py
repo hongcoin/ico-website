@@ -185,9 +185,9 @@ class NotFoundPageHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/team', TeamProfileHandler),
+    # ('/team', TeamProfileHandler),
     ('/stats', StatsHandler),
-    ('/faq', FAQHandler),
+    # ('/faq', FAQHandler),
     ('/how-it-works', HowItWorksHandler),
     ('/contract', ContractViewerHandler),
     ('/.well-known/acme-challenge/([\w-]+)', LetsEncryptHandler),
